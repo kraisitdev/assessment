@@ -22,27 +22,44 @@ Project Post-Test (หลักสูตร GO Software Engineering Bootcamp By 
 
 - 1.Clone project
 
-  ```bash
+  ```git
   git clone https://github.com/kraisitdev/assessment.git
   ```
 
 - 2.Go to project folder
 
-  ```bash
+  ```sh
   cd assessment
   ```
 
 - 3.Set up environment by command
 
-  ```bash
+  ```go
   go mod tidy
   ```
 
 - 4.Run project by command
 
-  ```bash
-  go run server.go
-  ```
+  - Run Server
+
+    ```go
+    go run server.go
+    ```
+
+  - Run Unit Test
+
+    ```go
+    go test -v --tags=unit ./...
+    ```
+
+  - Run Integration Test By DockerCompose Up
+    ```sh
+    docker-compose -f docker-compose.test.yml up --build --abort-on-container-exit --exit-code-from it_tests
+    ```
+  - Run Integration Test By DockerCompose Down
+    ```sh
+    docker-compose -f docker-compose.test.yml down
+    ```
 
 ---
 
