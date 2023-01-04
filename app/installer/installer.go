@@ -62,6 +62,8 @@ func SetupEndPoint(e *echo.Echo) {
 	e.GET("/expenses/:id", h.GetExpenseById)
 
 	e.PUT("/expenses/:id", h.UpdateExpenseById)
+
+	e.GET("/expenses", h.GetExpenseAll)
 }
 
 func SetupServer(e *echo.Echo) {
