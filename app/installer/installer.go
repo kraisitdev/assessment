@@ -44,11 +44,13 @@ func SetupMiddleware(e *echo.Echo) {
 }
 
 func SetupEndPoint(e *echo.Echo) {
-	handler.NewApp(true)
+	h := handler.NewApp(true)
 
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
 	})
+
+	e.POST("/expenses", h.InsertExpense)
 }
 
 func SetupServer(e *echo.Echo) {
