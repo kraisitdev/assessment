@@ -60,6 +60,8 @@ func SetupEndPoint(e *echo.Echo) {
 	e.POST("/expenses", h.InsertExpense)
 
 	e.GET("/expenses/:id", h.GetExpenseById)
+
+	e.PUT("/expenses/:id", h.UpdateExpenseById)
 }
 
 func SetupServer(e *echo.Echo) {
