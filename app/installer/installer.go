@@ -13,6 +13,8 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
+
+	"github.com/kraisitdev/assessment/app/rest/handler"
 )
 
 func SetupLogging() {
@@ -42,6 +44,8 @@ func SetupMiddleware(e *echo.Echo) {
 }
 
 func SetupEndPoint(e *echo.Echo) {
+	handler.NewApp(true)
+
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
 	})

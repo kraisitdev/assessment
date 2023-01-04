@@ -9,6 +9,10 @@ Project Post-Test (หลักสูตร GO Software Engineering Bootcamp By 
 
 ## 🏷 Version
 
+#### v0.2.0
+
+- Add handler NewApp for ConnectDb and CreateTableExpenses
+
 #### v0.1.0
 
 - Init project
