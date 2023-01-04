@@ -14,6 +14,32 @@ Project Post-Test (หลักสูตร GO Software Engineering Bootcamp By 
 - Init project
 - Config middleware logging and server
 
+## ⚙ Get Started
+
+- 1.Clone project
+
+  ```bash
+  git clone https://github.com/kraisitdev/assessment.git
+  ```
+
+- 2.Go to project folder
+
+  ```bash
+  cd assessment
+  ```
+
+- 3.Set up environment by command
+
+  ```bash
+  go mod tidy
+  ```
+
+- 4.Run project by command
+
+  ```bash
+  go run server.go
+  ```
+
 ---
 
 # Prerequisites
