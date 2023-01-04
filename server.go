@@ -1,11 +1,18 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	"github.com/kraisitdev/assessment/app/installer"
+	"github.com/labstack/echo/v4"
 )
 
+func init() {
+	installer.SetupLogging()
+}
+
 func main() {
-	fmt.Println("Please use server.go for main file")
-	fmt.Println("start at port:", os.Getenv("PORT"))
+	e := echo.New()
+
+	installer.SetupMiddleware(e)
+	installer.SetupEndPoint(e)
+	installer.SetupServer(e)
 }
