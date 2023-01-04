@@ -9,6 +9,11 @@ Project Post-Test (หลักสูตร GO Software Engineering Bootcamp By 
 
 ## 🏷 Version
 
+#### v0.3.0
+
+- Add feature of story-exp01
+- Add middleware key auth
+
 #### v0.2.0
 
 - Add handler NewApp for ConnectDb and CreateTableExpenses
