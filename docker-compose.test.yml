@@ -1,0 +1,30 @@
+version: '3.2'
+
+networks:
+  integration-test:
+
+services:
+  it_tests:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.test
+    volumes:
+      - $PWD:/go/src/target
+    depends_on:
+      - db
+    networks:
+      - integration-test
+    environment:
+      - DATABASE_URL=postgres://root:root@db:5432/GopherPostTestDB?sslmode=disable
+      - PORT=80
+  db:
+    image: postgres:14.6-alpine
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: GopherPostTestDB
+    restart: on-failure
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - integration-test
