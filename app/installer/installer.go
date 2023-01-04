@@ -41,6 +41,13 @@ func SetupMiddleware(e *echo.Echo) {
 	}))
 
 	e.Use(middleware.Recover())
+
+	e.Use(middleware.KeyAuthWithConfig(middleware.KeyAuthConfig{
+		AuthScheme: "November",
+		Validator: func(key string, c echo.Context) (bool, error) {
+			return key == "10, 2009", nil
+		},
+	}))
 }
 
 func SetupEndPoint(e *echo.Echo) {
