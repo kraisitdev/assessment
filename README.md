@@ -9,6 +9,11 @@ Project Post-Test (หลักสูตร GO Software Engineering Bootcamp By 
 
 ## 🏷 Version
 
+#### v0.7.0
+
+- Add Dockerfile
+- Update Project to Release
+
 #### v0.6.0
 
 - Add feature of story-exp04
@@ -51,6 +56,13 @@ Project Post-Test (หลักสูตร GO Software Engineering Bootcamp By 
 
 - 3.Set up environment by command
 
+  ```sh
+  export DATABASE_URL=postgres://pgadmin:P%40ssw0rd@localhost:5430/GopherPostTestDB?sslmode=disable
+  export PORT=2565
+  ```
+
+- 3.Go load package
+
   ```go
   go mod tidy
   ```
@@ -70,12 +82,27 @@ Project Post-Test (หลักสูตร GO Software Engineering Bootcamp By 
     ```
 
   - Run Integration Test By DockerCompose Up
+
     ```sh
     docker-compose -f docker-compose.test.yml up --build --abort-on-container-exit --exit-code-from it_tests
     ```
+
   - Run Integration Test By DockerCompose Down
+
     ```sh
     docker-compose -f docker-compose.test.yml down
+    ```
+
+  - Build Docker Images
+
+    ```sh
+    docker build -t assessment:1.0.0 .
+    ```
+
+  - Run Project From Docker Images
+
+    ```sh
+    docker run -d --env-file .env -p 2565:2565 assessment:1.0.0
     ```
 
 ---
