@@ -9,6 +9,10 @@ Project Post-Test (หลักสูตร GO Software Engineering Bootcamp By 
 
 ## 🏷 Version
 
+#### v0.6.0
+
+- Add feature of story-exp04
+
 #### v0.5.0
 
 - Add feature of story-exp03
